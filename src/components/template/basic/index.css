@@ -1,0 +1,49 @@
+#basic{
+    padding: 3% 15%;
+    background-color: rgba(195, 195, 195, 0.48);
+    /* height: 100vh; */
+}
+#basic p{
+    margin: 0;
+}
+#basic .maindiv > div{
+    background: white;
+}
+#basic .maindiv{
+    /* height: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 4%;
+    /* align-items: start; */
+    /* grid-template-rows: auto auto; */
+    grid-gap: 3%;
+    background-color: white;
+}
+#basic .maincontent{
+    /* grid-column: 1/1; */
+    grid-column-start: span 8;
+    /* justify-self: center; */
+}
+#basic .profilesection{
+    grid-column-start:span 5;
+    display: grid;
+    grid-gap: 3%;
+    grid-template-columns: 1fr 2.5fr;
+}
+#basic .profileimage{
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+}
+#basic .contactdetails{
+    grid-column-start:span 3;
+    justify-self: end;
+    padding: 10%;
+}
+#basic .experience-details{
+    grid-column-start:span 6;
+}
+#basic .experience-date{
+    grid-column-start:span 2;
+    justify-self: end;
+}

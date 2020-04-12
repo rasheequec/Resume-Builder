@@ -1,18 +1,20 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import NavBar from '../navbar/index'
+import BasicTemplate from '../template/basic/index'
+import Settings from '../settings/index'
 
 const Layout = () => {
     return (
-        <div>
+        <div style={{height: "100vh"}}>
             <Container fluid>
-                <Row>
+                 {/* <Row>
                     <NavBar/>
-                </Row>
+                </Row> */}
                 <Row>
-                    <Col sm={8}>sm=8</Col>
-                    <Col sm={4}>sm=4</Col>
-                </Row>
+                    <Col sm={8}> <BasicTemplate /> </Col>
+                    <Col sm={4}> <Settings/> </Col>
+                </Row> 
             </Container>
         </div>
     );
