@@ -12,8 +12,8 @@ const Layout = () => {
                     <NavBar/>
                 </Row> */}
                 <Row>
-                    <Col sm={8}> <BasicTemplate /> </Col>
-                    <Col sm={4}> <Settings/> </Col>
+                    <Col sm={8} style={{backgroundColor:'grey', minWidth: '600px', maxWidth:'700px'}}> <BasicTemplate /> </Col>
+                    <Col> <Settings/> </Col>
                 </Row> 
             </Container>
         </div>

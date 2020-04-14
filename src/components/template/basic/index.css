@@ -1,49 +1,92 @@
-#basic{
-    padding: 3% 15%;
-    background-color: rgba(195, 195, 195, 0.48);
-    /* height: 100vh; */
-}
-#basic p{
-    margin: 0;
-}
-#basic .maindiv > div{
-    background: white;
-}
-#basic .maindiv{
-    /* height: 100%; */
+
+  #basic {
+    grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: #fff;
+    margin: 0px auto 0px;
+    margin: 2%;
+    padding: 3%;
+    border-radius: 3px;
+    margin: 2% 0% 2% 0%;
+    overflow-y: scroll;
+    height: 95.5vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    padding: 4%;
-    /* align-items: start; */
-    /* grid-template-rows: auto auto; */
-    grid-gap: 3%;
-    background-color: white;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0%;
+  }
+  #basic p {
+      margin: 0;
+      font-size: 0.65em;
+  }
+  #basic h5 {
+    margin-bottom: 0.4em;
+    font-size: 1.2em;
+  }
+  #basic hr {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  #basic > div{
+    /* background:grey; */
 }
-#basic .maincontent{
-    /* grid-column: 1/1; */
-    grid-column-start: span 8;
-    /* justify-self: center; */
-}
-#basic .profilesection{
-    grid-column-start:span 5;
+  #basic .profilesection{
+    grid-column-start:span 8;
     display: grid;
     grid-gap: 3%;
     grid-template-columns: 1fr 2.5fr;
 }
 #basic .profileimage{
     object-fit: cover;
-    width: 100%;
-    max-height: 100%;
+    max-width: 80px;
+    max-height: 90px;
 }
 #basic .contactdetails{
-    grid-column-start:span 3;
+    grid-column-start:span 4;
     justify-self: end;
-    padding: 10%;
+    padding: 2%;
+}
+#basic .image{
+    grid-column-start: span 2;
+}
+#basic .text{
+    grid-column-start: span 6;
+}
+#basic .maincontent{
+    grid-column-start: span 12;
 }
 #basic .experience-details{
-    grid-column-start:span 6;
+    grid-column-start:span 9;
 }
 #basic .experience-date{
-    grid-column-start:span 2;
+    grid-column-start:span 3;
     justify-self: end;
 }
+#basic .skills{
+    display: inline;
+    font-weight: 700;
+    padding: 0.7% 1.5% 0.7% 1.5%;
+    background: black;
+    color: white;
+    border-radius: 100px;
+    margin-right: 2%;
+}
+#basic .university{
+    font-weight: 700;
+    font-size: 0.75em;
+}
+#basic .education{
+    grid-column-start: span 9 ;
+}
+#basic .passout-date{
+    font-weight: 700;
+    grid-column-start: span 3;
+}
+#basic .certifications{
+    font-weight: 600;
+    font-size: 0.8em;
+}
+  
+  
+  
+  
+  
+  
