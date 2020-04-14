@@ -6,9 +6,9 @@
     margin: 2%;
     padding: 3%;
     border-radius: 3px;
-    margin: 2% 0% 2% 0%;
-    overflow-y: scroll;
-    height: 95.5vh;
+    margin: 0.5% 0% 0.5% 0%;
+    /* overflow-y: scroll; */
+    height: 99vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 0%;
@@ -36,8 +36,10 @@
 }
 #basic .profileimage{
     object-fit: cover;
-    max-width: 80px;
-    max-height: 90px;
+    width: 120%;
+    height: 95%;
+    /* max-width: 80px;
+    max-height: 90px; */
 }
 #basic .contactdetails{
     grid-column-start:span 4;
@@ -45,10 +47,11 @@
     padding: 2%;
 }
 #basic .image{
-    grid-column-start: span 2;
+    grid-column-start: span 1;
 }
 #basic .text{
-    grid-column-start: span 6;
+    padding-left: 5%;
+    grid-column-start: span 7;
 }
 #basic .maincontent{
     grid-column-start: span 12;
