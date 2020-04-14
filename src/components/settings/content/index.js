@@ -1,16 +1,15 @@
 import React from 'react'
 import { Tabs } from 'antd';
-import Content from './content/index'
 const { TabPane } = Tabs;
 
-const Settings = () => {
+const Content = () => {
     return (
         <div style={{height: '100vh', backgroundColor: 'white'}}>
-    <Tabs defaultActiveKey="1" type="card" size={"large"} style={{textAlign:"center"}} >
-    <TabPane tab="Content" key="1">
-        <Content/>
+    {/* <Tabs defaultActiveKey="1" size="large" tabPosition="left" >
+    <TabPane tab="Profile" key="1">
+      Content
     </TabPane>
-    <TabPane tab="Design" key="2">
+    <TabPane tab="Work Experience" key="2">
       Design
     </TabPane>
     <TabPane tab="Common" key="3">
@@ -19,9 +18,9 @@ const Settings = () => {
     <TabPane tab="Templates" key="4">
       Templates
     </TabPane>
-  </Tabs>
+  </Tabs> */}
         </div>
     )
 }
 
-export default Settings
+export default Content

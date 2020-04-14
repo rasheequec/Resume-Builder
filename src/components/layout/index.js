@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import NavBar from '../navbar/index'
 import BasicTemplate from '../template/basic/index'
 import Settings from '../settings/index'
+import 'antd/dist/antd.css';
 
 const Layout = () => {
     return (
