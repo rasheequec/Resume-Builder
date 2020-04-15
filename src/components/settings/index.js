@@ -6,7 +6,7 @@ const { TabPane } = Tabs;
 const Settings = () => {
     return (
         <div style={{height: '100vh', backgroundColor: 'white'}}>
-    <Tabs defaultActiveKey="1" type="card" size={"large"} style={{textAlign:"center"}} >
+    <Tabs defaultActiveKey="1" type="card" size={"large"} >
     <TabPane tab="Content" key="1">
         <Content/>
     </TabPane>
