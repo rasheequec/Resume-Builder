@@ -1,3 +1,6 @@
+import { UPDATE_RESUME_DATA } from '../actions/types'
+import { act } from 'react-dom/test-utils';
+
 const initialState = {
   template: "basic",
   profile: {
@@ -13,6 +16,9 @@ const initialState = {
 }
 const resumeReducer = (state = initialState, action) => {
     switch (action.type) {
+      case UPDATE_RESUME_DATA: {
+        return { ...state, ...action.payload};
+      }
       default:
         return state
     }

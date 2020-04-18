@@ -1,0 +1,1 @@
+export const UPDATE_RESUME_DATA = "UPDATE_RESUME_DATA";

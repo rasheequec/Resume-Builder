@@ -1,7 +1,9 @@
 import React from 'react'
 import Profile from './profile'
 import { Collapse, Select } from 'antd';
+import { connect } from "react-redux";
 import { SettingOutlined } from '@ant-design/icons';
+import { updateResumeData } from '../../../actions/resumeActions'
 const { Panel } = Collapse;
 const { Option } = Select;
 
@@ -36,16 +38,16 @@ class Content extends React.Component {
   };
 
   render() {
-    const { expandIconPosition } = this.state;
+    const { data, updateData } = this.props;
     return (
       <div>
         <Collapse
           // defaultActiveKey={['1']}
           onChange={callback}
-          expandIconPosition={expandIconPosition}
+          // expandIconPosition={expandIconPosition}
         >
           <Panel header="User Profile" key="1" extra={genExtra()}>
-            <div><Profile /></div>
+            <div><Profile updateData={updateData} data={data} /></div>
           </Panel>
           <Panel header="This is panel header 2" key="2" extra={genExtra()}>
             <div>{text}</div>
@@ -59,4 +61,20 @@ class Content extends React.Component {
   }
 }
 
-export default Content
+const mapStateToProps = state => {
+  return {
+    data: state.resumeReducer
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+	return {
+		updateData: data => {
+			dispatch(updateResumeData(data))
+    },
+	}
+
+}
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Content)

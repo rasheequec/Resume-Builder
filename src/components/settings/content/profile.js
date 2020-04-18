@@ -1,40 +1,49 @@
 import React from 'react'
 import { Input, Form, Col, Row } from 'antd';
 
-const Profile = () => {
+
+const Profile = (props) => {
+    const { data, updateData } = props;
+    const changeHandle = (e) =>{
+        let profileData = {...data.profile, [e.target.name]: e.target.value }
+        let newData = {...data, profile: profileData}
+        updateData(newData)
+        // {...profileData}
+        // updateData(e.target.name)
+    }
     return (
         <div>
             {/* <Form name="horizontal_login" layout="inline"> */}
         <Row gutter={10} style={{padding: '1.5%'}}>
         <Col span={12}>
-        <Input  placeholder="Profile Image" />
+        <Input name="photo" onChange={changeHandle}  placeholder="Profile Image" />
         </Col>
         <Col span={12}>
-        <Input  placeholder="Name" />
+        <Input name="name" onChange={changeHandle} placeholder="Name" />
         </Col>
       </Row>
       <Row gutter={10} style={{padding: '1.5%'}}>
     <Col span={12}>
-      <Input placeholder="Designation" />
+      <Input name="title" onChange={changeHandle} placeholder="Designation" />
       </Col>
       <Col span={12}>
-        <Input placeholder="Address Line 1" />
+        <Input name="address1" onChange={changeHandle} placeholder="Address Line 1" />
         </Col>
       </Row>
       <Row gutter={10} style={{padding: '1.5%'}}>
       <Col span={12}>
-        <Input placeholder="Address Line 2" />
+        <Input name="address2" onChange={changeHandle} placeholder="Address Line 2" />
         </Col>
         <Col span={12}>
-        <Input placeholder="Phone number" />
+        <Input name="phone" onChange={changeHandle} placeholder="Phone number" />
         </Col>
       </Row>
       <Row gutter={10} style={{padding: '1.5%'}}>
       <Col span={12}>
-        <Input placeholder="Email" />
+        <Input name="email" onChange={changeHandle} placeholder="Email" />
         </Col>
         <Col span={12}>
-        <Input placeholder="Website" />
+        <Input name="website" onChange={changeHandle} placeholder="Website" />
         </Col>
       </Row>
             

@@ -1,9 +1,8 @@
 import React from 'react'
 import './index.css'
 
-class BasicTemplate extends React.Component{
-
-    render(){
+const BasicTemplate = (props) => {
+  const { photo, name, title, address1, address2, phone, website, email } = props.data.profile;
         return(
             <div id="basic">
 
@@ -12,17 +11,16 @@ class BasicTemplate extends React.Component{
                          <img className="profileimage" src="https://i.pinimg.com/originals/97/31/02/9731022f0be7c965e880505461643850.jpg"/>
                       </div>
                      <div className="text">
-                         <h5>Rasheeque</h5>
-                         <p>Full Stack Web Developer</p>
-                         <p>Ddhfjffgjf House</p>
-                         <p>pasdsdsdfgggg, Pacdlakkad</p>
-                         {/* <p>Kerala, India</p> */}
+                      <h5>{name}</h5>
+                         <p>{title}</p>
+                         <p>{address1}</p>
+                         <p>{address2}</p>
                      </div>
                     {/* </div> */}
                     <div className="contactdetails">
-                         <small>+91-9644332212</small><br/>
-                         <small>www.rasheeqme.com</small><br/>
-                         <small>rasheeque@gmail.com</small>
+                         <small>{phone}</small><br/>
+                          <small>{email}</small><br/>
+                          <small>{website}</small>
                     </div>
                     <div className="maincontent">
                     <hr/>
@@ -247,7 +245,6 @@ class BasicTemplate extends React.Component{
                </div> */}
             </div>
         )
-    }
 }
 
 export default BasicTemplate
