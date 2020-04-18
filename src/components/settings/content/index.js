@@ -1,4 +1,5 @@
 import React from 'react'
+import Profile from './profile'
 import { Collapse, Select } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 const { Panel } = Collapse;
@@ -43,8 +44,8 @@ class Content extends React.Component {
           onChange={callback}
           expandIconPosition={expandIconPosition}
         >
-          <Panel header="This is panel header 1" key="1" extra={genExtra()}>
-            <div>{text}</div>
+          <Panel header="User Profile" key="1" extra={genExtra()}>
+            <div><Profile /></div>
           </Panel>
           <Panel header="This is panel header 2" key="2" extra={genExtra()}>
             <div>{text}</div>
