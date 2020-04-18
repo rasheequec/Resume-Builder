@@ -1,5 +1,9 @@
 import React from 'react'
-import Profile from './profile'
+import './index.css'
+import Profile from './profile';
+import Objective from './objective';
+import Education from './education';
+import Skills from './skills'
 import { Collapse, Select } from 'antd';
 import { connect } from "react-redux";
 import { SettingOutlined } from '@ant-design/icons';
@@ -49,11 +53,14 @@ class Content extends React.Component {
           <Panel header="User Profile" key="1" extra={genExtra()}>
             <div><Profile updateData={updateData} data={data} /></div>
           </Panel>
-          <Panel header="This is panel header 2" key="2" extra={genExtra()}>
-            <div>{text}</div>
+          <Panel header={data.objective.heading} key="2" extra={genExtra()}>
+            <div><Objective updateData={updateData} data={data}/></div>
           </Panel>
-          <Panel header="This is panel header 3" key="3" extra={genExtra()}>
-            <div>{text}</div>
+          <Panel header="Skills" key="3" extra={genExtra()}>
+            <Skills updateData={updateData} data={data}/>
+          </Panel>
+          <Panel header="Education" key="4" extra={genExtra()}>
+            <Education updateData={updateData} data={data}/>
           </Panel>
         </Collapse>
       </div>

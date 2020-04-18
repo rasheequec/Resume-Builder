@@ -1,0 +1,7 @@
+#objective{
+    padding: 2%;
+}
+#objective .dynamic-delete-button{
+    position: absolute;
+    top: 0;
+}

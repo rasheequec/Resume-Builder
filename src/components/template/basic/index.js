@@ -3,6 +3,7 @@ import './index.css'
 
 const BasicTemplate = (props) => {
   const { photo, name, title, address1, address2, phone, website, email } = props.data.profile;
+  const { heading, description} = props.data.objective;
         return(
             <div id="basic">
 
@@ -24,8 +25,8 @@ const BasicTemplate = (props) => {
                     </div>
                     <div className="maincontent">
                     <hr/>
-                        <h5>Objective</h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    <h5>{heading}</h5>
+                    <p>{description}</p>
                     </div>
                     <div className="maincontent">
                         <hr />

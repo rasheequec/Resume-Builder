@@ -12,6 +12,10 @@ const initialState = {
     phone:"",
     email:"",
     website: ""
+  },
+  objective: {
+    heading: "Objective",
+    description: ""
   }
 }
 const resumeReducer = (state = initialState, action) => {
