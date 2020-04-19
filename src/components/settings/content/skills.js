@@ -12,7 +12,7 @@ const Skills = () => {
 
   return (
     <Form name="dynamic_form_item" id="objective" onFinish={onFinish}>
-      <Form.List name="names">
+      <Form.List name={["names","fff"]}>
         {(fields, { add, remove }) => {
           return (
             <div>
