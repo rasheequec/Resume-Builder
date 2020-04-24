@@ -17,7 +17,8 @@ const Skills = (props) => {
     newSkills.forEach(item => {
       skillArray.push(item.skill)
     })
-    let newData = {...data, skills: skillArray}
+    let skillsData = {...data.skills, list: skillArray }
+    let newData = {...data, skills: skillsData}
     updateData(newData)
   }
   const changeHandle = e => {
@@ -32,15 +33,25 @@ const Skills = (props) => {
     newSkills.forEach(item => {
       skillArray.push(item.skill)
     })
-    let newData = {...data, skills: skillArray}
+    if(e.target.name == "heading"){
+      let skillsData = {...data.skills, heading: e.target.value }
+      let newData = {...data, skills: skillsData}
+      updateData(newData)
+    }
+    else{
+    let skillsData = {...data.skills, list: skillArray }
+    let newData = {...data, skills: skillsData}
     updateData(newData)
+    }
   }
   return (
     <Form name="dynamic_form_item">
             <div>
+            <Input onChange={changeHandle} size="medium" value={data.skills.heading} placeholder="Skills" name="heading" style={{ width: '60%', marginBottom:'2%'}} />
+
               {skills.map( data => (
                           <div>
-                          <Input onChange={changeHandle} value={data.skill} placeholder={`Skill`} name={data.id} style={{ width: '60%', marginBottom:'2%'}} />
+                          <Input size="small" onChange={changeHandle} value={data.skill} name={data.id} style={{ width: '60%', marginBottom:'2%'}} />
                           <DeleteOutlined onClick={() => deleteField(data.id)} />
                           </div>
               ))}

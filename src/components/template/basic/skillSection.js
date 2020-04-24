@@ -1,14 +1,14 @@
 import React from 'react'
 
 const SkillSection = (props) => {
-    const { skills } = props.data;
+    const { heading, list } = props.data.skills;
 return(
     <React.Fragment>
                         <div className="maincontent">
                             <hr/>
-                            <h5>Skills</h5>
+                            <h5>{heading}</h5>
                             {
-                                skills.map(item => {
+                                list.map(item => {
                                     return(
                                     <p className="skills">{item}</p>
                                     )
