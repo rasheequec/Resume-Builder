@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css'
 import ProfileSection from './profileSection'
 import ObjectiveSection from './objectiveSection'
+import SkillSection from './skillSection'
 
 const BasicTemplate = (props) => {
   const { photo, name, title, address1, address2, phone, website, email } = props.data.profile;
@@ -27,15 +28,7 @@ const BasicTemplate = (props) => {
                         <div className="experience-date">
                             <p>2018 - 2019</p>
                         </div>
-                        <div className="maincontent">
-                            <hr/>
-                            <h5>Skills</h5>
-                            <p className="skills">HTML5</p>
-                            <p className="skills">CSS3</p>
-                            <p className="skills">Javascript</p>
-                            <p className="skills">React</p>
-                            <p className="skills">Node</p>
-                        </div>
+                        <SkillSection data = {props.data}/>
                         <div className="maincontent">
                             <hr />
                             <h5>Education</h5>

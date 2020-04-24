@@ -4,8 +4,8 @@ import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 
 
 
-const Skills = () => {
-
+const Skills = (props) => {
+  const { data, updateData } = props;
   const [skills, setSkills] = useState([{id:1, skill:""}])
   const addField = () => {
     setSkills([...skills, {id: Math.random(), skill:""}])
@@ -13,17 +13,27 @@ const Skills = () => {
   const deleteField = id => {
     let newSkills = skills.filter(data => data.id != id)
     setSkills(newSkills)
+    let skillArray = []
+    newSkills.forEach(item => {
+      skillArray.push(item.skill)
+    })
+    let newData = {...data, skills: skillArray}
+    updateData(newData)
   }
   const changeHandle = e => {
-    setSkills(
-      skills.map((item) => {
-        if (item.id == e.target.name) {
-          item.skill = e.target.value;
-        }
-        return item
-      })
-    );
-    console.log(skills)
+    let newSkills = skills.map((item) => {
+      if (item.id == e.target.name) {
+        item.skill = e.target.value;
+      }
+      return item
+    });
+    setSkills(newSkills)
+    let skillArray = []
+    newSkills.forEach(item => {
+      skillArray.push(item.skill)
+    })
+    let newData = {...data, skills: skillArray}
+    updateData(newData)
   }
   return (
     <Form name="dynamic_form_item">
