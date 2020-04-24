@@ -16,7 +16,8 @@ const initialState = {
   objective: {
     heading: "Objective",
     description: ""
-  }
+  },
+  skills: []
 }
 const resumeReducer = (state = initialState, action) => {
     switch (action.type) {
