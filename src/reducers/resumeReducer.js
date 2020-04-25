@@ -24,6 +24,14 @@ const initialState = {
   education: {
     heading: "Education",
     list: []
+  },
+  experience: {
+    heading: "Work Experience",
+    list: []
+  },
+  certificate: {
+    heading: "Certifications",
+    list: []
   }
 }
 const resumeReducer = (state = initialState, action) => {

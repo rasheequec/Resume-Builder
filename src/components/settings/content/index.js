@@ -3,7 +3,9 @@ import './index.css'
 import Profile from './profile';
 import Objective from './objective';
 import Education from './education';
-import Skills from './skills'
+import Skills from './skills';
+import Experience from './experience';
+import Certificate from './certificate';
 import { Collapse, Select } from 'antd';
 import { connect } from "react-redux";
 import { SettingOutlined } from '@ant-design/icons';
@@ -59,10 +61,14 @@ class Content extends React.Component {
           <Panel header={data.skills.heading} key="3" extra={genExtra()}>
             <Skills updateData={updateData} data={data}/>
           </Panel>
-          <Panel header="Education" key="4" extra={genExtra()}>
+          <Panel header={data.education.heading} key="4" extra={genExtra()}>
             <Education updateData={updateData} data={data}/>
           </Panel>
-          <Panel header="Certifications" key="5" extra={genExtra()}>
+          <Panel header={data.experience.heading} key="5" extra={genExtra()}>
+            <Experience  updateData={updateData} data={data}/>
+          </Panel>
+          <Panel header={data.certificate.heading} key="6" extra={genExtra()}>
+            <Certificate updateData={updateData} data={data}/>
           </Panel>
         </Collapse>
       </div>

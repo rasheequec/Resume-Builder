@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import { Input, Form, Col, Row, Button } from 'antd';
 import { DeleteOutlined, EditOutlined, PlusOutlined } from '@ant-design/icons';
+const { TextArea } = Input;
 
-const Education = (props) => {
+const Experience = (props) => {
   const { data, updateData } = props;
-  const [details, setDetails] = useState([{id:1, university:"", course:"",from:"",to:""}])
+  const [details, setDetails] = useState([{id:1, description:"", from:"", to:""}])
   const [active, setActive] = useState(true)
 
   const editHandle = () => {
     setActive(!active)
   }
   const addField = () => {
-    setDetails([...details, {id: Math.random(), university:"", course:"", from:"", to:""}])
+    setDetails([...details, {id: Math.random(), description:"", from:"", to:""}])
   }
   const changeHandle = (e, id) => {
     let newDetails = details.map((item) => {
@@ -21,46 +22,44 @@ const Education = (props) => {
       return item
     });
     setDetails(newDetails)
-    let education = {...data.education, list: newDetails }
-    let newData = {...data, education}
+    let experience = {...data.experience, list: newDetails }
+    let newData = {...data, experience}
     updateData(newData)
   }
   const changeHeading = e => {
-    let education = {...data.education, heading: e.target.value }
-    let newData = {...data, education}
+    let experience = {...data.experience, heading: e.target.value }
+    let newData = {...data, experience}
     updateData(newData)
   }
   const deleteField = id => {
     let newDetails = details.filter(data => data.id != id)
     setDetails(newDetails)
-    let education = {...data.education, list: newDetails }
-    let newData = {...data, education}
+    let experience = {...data.experience, list: newDetails }
+    let newData = {...data, experience}
     updateData(newData)
   }
   return (
     <div>
-      <Input disabled={active} onChange={changeHeading} size="medium" value={data.education.heading} placeholder="Education" name="heading" style={{ width: '60%', margin: '0.5%'}} />
+      <Input disabled={active} onChange={changeHeading} size="medium" value={data.experience.heading} placeholder="Work Experience" name="heading" style={{ width: '60%', margin: '0.5%'}} />
       {active && <EditOutlined className="editIcon" onClick={editHandle}/>}
       {details.map(data => {
         return(
         <div>
           <Row gutter={10} style={{padding: '0.5%'}}>
         <Col span={18}>
-        <Input name="university" onChange={e => changeHandle(e, data.id)}  placeholder="University" />
+        <TextArea
+          name="description"
+          onChange={e => changeHandle(e, data.id)}
+          placeholder="Description"
+          autoSize={{ minRows: 3}}
+        />
         </Col>
-        <Col span={4}>
-        <Input name="from" onChange={e => changeHandle(e, data.id)} placeholder="From" />
-        </Col>
-        <Col span={2}>
-        <DeleteOutlined onClick={() => deleteField(data.id)}/>
-        </Col>
-      </Row>
-      <Row gutter={10} style={{padding: '0.5%'}}>
-    <Col span={18}>
-      <Input name="course" onChange={e => changeHandle(e, data.id)} placeholder="Course" />
-      </Col>
-      <Col span={4}>
+        <Col span={5}>
+        <Input name="from" onChange={e => changeHandle(e, data.id)} placeholder="From" style={{marginBottom: "13%"}}/>
         <Input name="to" onChange={e => changeHandle(e, data.id)} placeholder="To" />
+        </Col>
+        <Col span={1}>
+        <DeleteOutlined onClick={() => deleteField(data.id)}/>
         </Col>
       </Row>
       <hr/>
@@ -80,4 +79,4 @@ const Education = (props) => {
   );
 };
 
-export default Education
+export default Experience
