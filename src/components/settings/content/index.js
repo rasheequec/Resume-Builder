@@ -44,7 +44,7 @@ class Content extends React.Component {
   render() {
     const { data, updateData } = this.props;
     return (
-      <div>
+      <div id="content">
         <Collapse
           // defaultActiveKey={['1']}
           onChange={callback}
@@ -56,11 +56,13 @@ class Content extends React.Component {
           <Panel header={data.objective.heading} key="2" extra={genExtra()}>
             <div><Objective updateData={updateData} data={data}/></div>
           </Panel>
-          <Panel header="Skills" key="3" extra={genExtra()}>
+          <Panel header={data.skills.heading} key="3" extra={genExtra()}>
             <Skills updateData={updateData} data={data}/>
           </Panel>
           <Panel header="Education" key="4" extra={genExtra()}>
             <Education updateData={updateData} data={data}/>
+          </Panel>
+          <Panel header="Certifications" key="5" extra={genExtra()}>
           </Panel>
         </Collapse>
       </div>

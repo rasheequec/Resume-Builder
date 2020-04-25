@@ -3,6 +3,7 @@ import './index.css'
 import ProfileSection from './profileSection'
 import ObjectiveSection from './objectiveSection'
 import SkillSection from './skillSection'
+import EducationSection from './educationSection'
 
 const BasicTemplate = (props) => {
   const { photo, name, title, address1, address2, phone, website, email } = props.data.profile;
@@ -29,24 +30,8 @@ const BasicTemplate = (props) => {
                             <p>2018 - 2019</p>
                         </div>
                         <SkillSection data = {props.data}/>
-                        <div className="maincontent">
-                            <hr />
-                            <h5>Education</h5>
-                        </div>
-                        <div className="education">
-                            <p className="university">University of Calicut</p>
-                            <p>Master of Computer Application</p>
-                        </div>
-                        <div className="passout-date">
-                            <p>2015 - 2018</p>
-                        </div>
-                        <div className="education">
-                            <p className="university">MG University, Kochi</p>
-                            <p>Bachelor of Computer Application</p>
-                        </div>
-                        <div className="passout-date">
-                            <p>2018 - 2020</p>
-                        </div>
+                        <EducationSection data = {props.data}/>
+
                         <div className="maincontent">
                             <hr />
                             <h5>Certifications</h5>

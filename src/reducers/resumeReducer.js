@@ -20,6 +20,10 @@ const initialState = {
   skills: {
     heading: "Skills",
     list: []
+  },
+  education: {
+    heading: "Education",
+    list: []
   }
 }
 const resumeReducer = (state = initialState, action) => {

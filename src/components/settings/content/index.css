@@ -1,7 +1,9 @@
-#objective{
-    padding: 2%;
+#content{
+
 }
-#objective .dynamic-delete-button{
-    position: absolute;
-    top: 0;
+#content .editIcon{
+    margin: 1.4%;
+    font-size: 1.3em;
+    vertical-align: middle;
+    cursor: pointer;
 }

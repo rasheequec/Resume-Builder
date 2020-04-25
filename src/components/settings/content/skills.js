@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { Form, Input, Button } from 'antd';
-import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
+import { DeleteOutlined, PlusOutlined, EditOutlined } from '@ant-design/icons';
 
 
 
 const Skills = (props) => {
   const { data, updateData } = props;
   const [skills, setSkills] = useState([{id:1, skill:""}])
+  const [active, setActive] = useState(true)
+
+
+  const editHandle = () => {
+    setActive(!active)
+  }
   const addField = () => {
     setSkills([...skills, {id: Math.random(), skill:""}])
   }
@@ -47,7 +53,8 @@ const Skills = (props) => {
   return (
     <Form name="dynamic_form_item">
             <div>
-            <Input onChange={changeHandle} size="medium" value={data.skills.heading} placeholder="Skills" name="heading" style={{ width: '60%', marginBottom:'2%'}} />
+            <Input disabled={active} onChange={changeHandle} size="medium" value={data.skills.heading} placeholder="Skills" name="heading" style={{ width: '60%', marginBottom:'2%'}} />
+            {active && <EditOutlined className="editIcon" onClick={editHandle}/>}
 
               {skills.map( data => (
                           <div>
